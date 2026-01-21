@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Percentage Marks Calculator</title>
+</head>
+<body>
+    
+    <h1>Total & Percentage Marks</h1>
+    <br><br>
+    <h4 id="sub1">Maths : </h4>
+    <h4 id="sub2">English : </h4>
+    <h4 id="sub3">Science : </h4>
+    <h4 id="sub4">Hindi : </h4>
+    <h4 id="sub5">Computer : </h4>
+    <br><br>
+    <h4 id="total">Total Marks = </h4>
+    <h4 id="percentage">Percentage = </h4>
+
+    <script>
+
+        let alt = alert("Give All Subjects Marks Out of 100")
+        let sub1 = Number(prompt("Enter Maths Marks : "))
+        let sub2 = Number(prompt("Enter English Marks : "))
+        let sub3 = Number(prompt("Enter Science Marks : "))
+        let sub4 = Number(prompt("Enter hindi Marks : "))
+        let sub5 = Number(prompt("Enter Computer Marks : "))
+
+        let dsub1 = document.getElementById("sub1")
+        let dsub2 = document.getElementById("sub2")
+        let dsub3 = document.getElementById("sub3")
+        let dsub4 = document.getElementById("sub4")
+        let dsub5 = document.getElementById("sub5")
+        let dtotal = document.getElementById("total")
+        let dpercentage = document.getElementById("percentage")
+
+        let total = sub1 + sub2 + sub3 + sub4 + sub5
+        let percentage = (total * 100) / 500
+
+        dsub1.innerText = `Maths : ${sub1}`
+        dsub2.innerText = `English : ${sub2} %`
+        dsub3.innerText = `Science : ${sub3}`
+        dsub4.innerText = `Hindi : ${sub4}`
+        dsub5.innerText = `Computer : ${sub4}`
+        dtotal.innerText = `Total Marks : ${total} out of 500`
+        dpercentage.innerText = `Percentage : ${percentage}%`
+
+    </script>
+
+</body>
+</html>

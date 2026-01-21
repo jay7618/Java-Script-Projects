@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Area Circle Calculator</title>
+</head>
+<body>
+    
+    <h1>Area Circle Calculator</h1>
+    <br><br>
+    <h4 id="rds">Circle Radius : </h4>
+    <br><br>
+    <h4 id="area">Area Of Circle = </h4>
+
+    <script>
+
+        let rds = Number(prompt("Enter Radius of Circle : "))
+
+        let drds = document.getElementById("rds")
+        let darea = document.getElementById("area")
+
+        let area = 3.14 * rds * rds
+
+        drds.innerText = `Circle Radius : ${rds}`
+        darea.innerText = `Area Of Circle = ${area}`
+
+    </script>
+
+</body>
+</html>

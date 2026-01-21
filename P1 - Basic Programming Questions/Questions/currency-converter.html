@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Converter</title>
+</head>
+<body>
+    
+    <h1>Currency Converter</h1>
+    <br><br>
+    <h4 id="inr">INR : </h4>
+    <br><br>
+    <h4 id="usd">USD = </h4>
+
+    <script>
+
+        let inr = Number(prompt("Enter Amount : "))
+
+        let dinr = document.getElementById("inr")
+        let dusd = document.getElementById("usd")
+
+        let usd = (inr / 83)
+
+        dinr.innerText = `INR : ${inr}`
+        dusd.innerText = `USD = ${usd.toFixed(3)}`
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salary Calculator</title>
+</head>
+<body>
+    
+    <h1>Salary Calculator</h1>
+    <br><br>
+    <h4 id="name">Name : </h4>
+    <h4 id="salary">Salary : </h4>
+    <h4 id="hra">HRA : </h4>
+    <h4 id="da">DA : </h4>
+    <h4 id="ta">TA : </h4>
+    <h4 id="gs">Gross Salary : </h4>
+
+    <script>
+
+        let name = prompt("Enter Name : ")
+        let Salary = Number(prompt("Enter Salary : "))
+        let HRA = Number(prompt("Enter HRA (in %) : "))
+        let DA = Number(prompt("Enter DA (in %) : "))
+        let TA = Number(prompt("Enter TA (in %) : "))
+
+        let dname = document.getElementById("name")
+        let dsalary = document.getElementById("salary")
+        let dhra = document.getElementById("hra")
+        let dda = document.getElementById("da")
+        let dta = document.getElementById("ta")
+        let dgs = document.getElementById("gs")
+
+        GS = Salary + ((HRA + DA + TA)*Salary) / 100
+
+        dname.innerText = `Name : ${name}`
+        dsalary.innerText = `Salary : ${Salary}`
+        dhra.innerText = `HRA : ${HRA}`
+        dda.innerText = `DA : ${DA}`
+        dta.innerText = `TA : ${TA}`
+        dgs.innerText = `Gross Salary : ${GS}`
+
+    </script>
+
+</body>
+</html>

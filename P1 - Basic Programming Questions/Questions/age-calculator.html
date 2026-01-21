@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Age Calculator</title>
+</head>
+<body>
+    
+    <h1>Age Calculator</h1>
+    <br><br>
+    <h4 id="year">Year : </h4>
+    <br><br>
+    <h4 id="age">Age : </h4>
+
+    <script>
+
+        let year = Number(prompt("Enter Your birth Year : "))
+
+        let dyear = document.getElementById("year")
+        let dage = document.getElementById("age")
+        let currentYear = new Date().getFullYear();
+
+        let age = currentYear - year
+
+        dyear.innerText = `Circle Radius : ${year}`
+        dage.innerText = `Area Of Circle = ${age}`
+
+    </script>
+
+</body>
+</html>

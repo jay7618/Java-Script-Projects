@@ -1,0 +1,57 @@
+@media screen and (max-width: 1200px) {
+
+  body {
+    height: 100% !important;
+  }
+
+  .container {
+    min-height: 100% !important;
+  }
+
+  #particles-js {
+    height: 160% !important;
+  }
+  .box-section {
+    margin-top: 25px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+
+  .outer-window {
+    padding: 10px 15px 20px 15px!important;
+  }
+
+  .box-section {
+    max-width:  90vw !important;
+  }
+
+  .title {
+    margin-bottom: 0px !important;
+    padding: 10px 0 !important;
+  }
+
+  .title h1 {
+    font-size: 24px !important;
+  }
+
+  .Projects-Box a h2 {
+    font-size: 18px !important;
+  }
+    #particles-js {
+    height: 150% !important;
+  }
+}
+
+@media screen and (max-width: 576px) {
+
+  .title h1 {
+    font-size: 20px !important;
+  }
+
+  .Projects-Box a h2 {
+    font-size: 16px !important;
+  }
+
+}
+

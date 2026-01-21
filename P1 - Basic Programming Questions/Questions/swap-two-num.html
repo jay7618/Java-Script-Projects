@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swap To Numbers</title>
+</head>
+<body>
+    
+    <h1>Swap To Numbers (Without Using Extra Variable) </h1>
+    <br><br>
+    <h4 id="orgNum1">x : </h4>
+    <h4 id="orgNum2">y : </h4>
+    <br><br>
+    <h4>Swapped Value</h4>
+    <h4 id="swNum1">x : </h4>
+    <h4 id="swNum2">y : </h4>
+    
+
+    <script>
+
+        let X = Number(prompt("Enter Value Of X : "))
+        let Y = Number(prompt("Enter Value Of Y : "))
+
+        let dx = document.getElementById("orgNum1")
+        let dy = document.getElementById("orgNum2")
+
+        dx.innerText = `X : ${X}`
+        dy.innerText = `Y : ${Y}`
+        
+        X = X + Y
+        Y = X - Y
+        X = X - Y
+        
+        let swx = document.getElementById("swNum1")
+        let swy = document.getElementById("swNum2")
+
+        swx.innerText = `X : ${X}`
+        swy.innerText = `Y : ${Y}`
+
+
+    </script>
+
+</body>
+</html>

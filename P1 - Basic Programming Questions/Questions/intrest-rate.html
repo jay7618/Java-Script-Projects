@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Intrestrate Calculator</title>
+</head>
+<body>
+    
+    <h1>Simple Intrest Rate</h1>
+    <br><br>
+    <h4 id="amount">Principal Amount : </h4>
+    <h4 id="rate">Rate : </h4>
+    <h4 id="time">Time (in months) : </h4>
+    <h4 id="ia">Intrest Amonut : </h4>
+
+    <script>
+
+        let amount = Number(prompt("Enter Amonut : "))
+        let rate = Number(prompt("Enter Rate Of Intrest (in %) : "))
+        let time = Number(prompt("Enter Time (in months) : "))
+
+        let damount = document.getElementById("amount")
+        let drate = document.getElementById("rate")
+        let dtime = document.getElementById("time")
+        let dia = document.getElementById("ia")
+
+        let IA = (amount*rate*time) / 100
+
+        damount.innerText = `Principal Amount : ${amount}`
+        drate.innerText = `Rate : ${rate} %`
+        dtime.innerText = `Time (in months) : ${time}`
+        dia.innerText = `Intrest Amonut : ${IA}`
+
+    </script>
+
+</body>
+</html>
