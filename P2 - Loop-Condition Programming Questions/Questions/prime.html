@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prime From Range</title>
+</head>
+<body>
+    <h1 id="title">Prime From Range</h1>
+    <br>
+    <h2 id="start">Starting No : </h2>
+    <h2 id="end">Ending No : </h2>
+    <br><br>
+    <h2 id="ans">Prime No : </h2>
+
+    <script>
+        let start = Number(prompt("Enter Starting No : "))
+        let end = Number(prompt("Enter Ending No : "))
+        let prime = ""
+
+        document.getElementById("start").innerText = `Starting No : ${start}`
+        document.getElementById("end").innerText = `Ending No : ${end}`
+
+        for (let i = start; i <= end; i++) {
+            let isPrime = true;
+            if (i === 1) {
+                isPrime = false;
+            } else {
+                for (let j = 2; j < i; j++) {
+                    if (i % j === 0) {
+                        isPrime = false;
+                        break;
+                    }
+                }
+            }
+
+            if (isPrime) {
+                prime += i + " ";
+            }
+        }
+
+        document.getElementById("ans").innerHTML = `Prime No : ${prime}`
+
+    </script>
+
+</body>
+</html>

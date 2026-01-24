@@ -126,6 +126,7 @@ canvas {
   display: block;
 } 
 #particles-js {
+    z-index: 1;
   position: absolute;
   width: 100%;
   height: 100%;
@@ -134,6 +135,15 @@ canvas {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 50% 50%;
-} /* ---- stats.js ---- */
+} 
 
 
+#canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
