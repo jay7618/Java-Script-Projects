@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products List Project</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="./assets/fonts/manrope/stylesheet.css">
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+    <h1>Trending Products   </h1>
+
+    <section class="product-section">
+        <div class="container">
+            <div class="row" id="list">
+                
+            </div>
+        </div>
+    </section>
+
+<script>
+    let products = [
+        {
+            imageUrl : "./assets/images/Wireless-DR5-headphone.webp",
+            pdName: "Wireless DR5 headphone",
+            pdDisprice: "3,900.00",
+            pdOgprice: "4,900.00",
+            ratings: 4,
+            isBadge: true
+        },
+        {
+            imageUrl : "./assets/images/Wireless-computer-mouse.webp",
+            pdName: "Wireless computer mouse",
+            pdDisprice: "2,800.00",
+            pdOgprice: "3,500.00",
+            ratings: 5,
+            isBadge: false
+        },
+        {
+            imageUrl : "./assets/images/Wireless-black-headphone.webp",
+            pdName: "Wireless black headphone",
+            pdDisprice: "2,500.00",
+            pdOgprice: "3,000.00",
+            ratings: 3.5,
+            isBadge: false
+        },
+        {
+            imageUrl : "./assets/images/Sansoi-kettle-tea-1LT-bottle.jpg",
+            pdName: "Sansoi kettle tea 1LT bottle",
+            pdDisprice: "2,700.00",
+            pdOgprice: "3,100.00",
+            ratings: 3,
+            isBadge: true
+        },
+        {
+            imageUrl : "./assets/images/MI-pocket-mini-speaker.webp",
+            pdName: "MI pocket mini speaker",
+            pdDisprice: "1,500.00",
+            pdOgprice: "2,200.00",
+            ratings: 4.5,
+            isBadge: false
+        },
+        {
+            imageUrl : "./assets/images/Hand-smart-speaker.webp",
+            pdName: "Hand smart speaker",
+            pdDisprice: "2,000.00",
+            pdOgprice: "2,500.00",
+            ratings: 5,
+            isBadge: true
+        },
+        {
+            imageUrl : "./assets/images/Digital-canon-black-camera.webp",
+            pdName: "Digital canon black camera",
+            pdDisprice: "4,999.00",
+            pdOgprice: "8,500.00",
+            ratings: 4,
+            isBadge: false
+        },
+        {
+            imageUrl : "./assets/images/B6-smart-gray-headphone.webp",
+            pdName: "B6 smart gray headphone",
+            pdDisprice: "1,800.00",
+            pdOgprice: "2,500.00",
+            ratings: 4.5,
+            isBadge: false
+        }
+    ];
+
+    products.forEach((product) => {
+        // Convert float ratings to integer for easier processing
+        let ratingInt = Math.floor(product.ratings);
+        let halfStar = product.ratings % 1 !== 0; // Check if it's a half star
+        
+        // Generate stars based on the rating
+        let starsHtml = '';
+        
+        // Full stars
+        for (let i = 0; i < ratingInt; i++) {
+            starsHtml += '<li><span><i class="ri-star-fill"></i></span></li>';
+        }
+        
+        // Half star if needed
+        if (halfStar) {
+            starsHtml += '<li><span><i class="ri-star-half-line"></i></span></li>';
+        }
+        
+        // Empty stars to make up to 5 stars
+        for (let i = ratingInt + (halfStar ? 1 : 0); i < 5; i++) {
+            starsHtml += '<li><span><i class="ri-star-line"></i></span></li>';
+        }
+
+        let badgeHtml = product.isBadge ? '<span class="badge text-bg-success position-absolute"style="top: 10px; left: 10px; height: 25px; display: flex; align-items: center;border-radius: 2px;">Super Saver</span>' : '';
+
+        document.getElementById("list").innerHTML += `
+        <div class="col-3">
+            <div class="div">
+                <div class="product-card">
+                    <div class="product-img position-relative">
+                        ${badgeHtml}
+                        <img src="${product.imageUrl}" alt="" width="100%">
+                    </div>
+                    <div class="product-content mt-4 d-flex flex-column justify-content-center align-items-center">
+                        <div class="pd-name">
+                            <h3 class="fs-5"><strong>${product.pdName}</strong></h3>
+                        </div>
+                        <div class="pd-price">
+                            <h3 class="fs-6 mb-0">
+                                <span>Rs. ${product.pdDisprice}</span>
+                                <span><strike>Rs. ${product.pdOgprice}</strike></span>
+                            </h3>
+                        </div>
+                        <div class="ratings">
+                            <ul class="d-flex gap-1 p-0">
+                                ${starsHtml}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        `;
+    });
+
+</script>
+
+    <script src="./assets/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
